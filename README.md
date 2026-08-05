@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # whatsapp_ui_clone
 
 A new Flutter project.
@@ -15,3 +16,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Whatsapp_UI_Clone
+>>>>>>> 47aab07bd7b098d07f148fc8987a1a87e89e39f2
