@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:google_fonts/google_fonts.dart";
 
 class Uihelper {
   static CustomeButton({
@@ -28,7 +29,7 @@ class Uihelper {
   }) {
     return Text(
       text,
-      style: TextStyle(fontSize: height, color: color ?? Color(0xFF5E5E5E), fontWeight: fontweight),
+      style: GoogleFonts.roboto(fontSize: height, color: color ?? Color(0xFF5E5E5E), fontWeight: fontweight),
 
     );
   }
