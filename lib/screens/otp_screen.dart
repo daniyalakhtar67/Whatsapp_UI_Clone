@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:whatsapp_ui_clone/screens/Profile_screen.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
@@ -17,7 +18,9 @@ class _OtpScreenState extends State<OtpScreen> {
         vertical: 30,
       ),
       child: InkWell(
-        onTap: (){},
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
+        },
         child: Container(
           width: 50,
           height: 45,
