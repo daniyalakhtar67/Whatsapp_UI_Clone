@@ -54,7 +54,7 @@ class _EnterNumScreenState extends State<EnterNumScreen> {
           Center(
             child: Text('Enter you phone number', style: GoogleFonts.inter(
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 18,
               color: Color(0xFF00A884),
             )),
           ),
