@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:io';
 
+import 'package:image_picker/image_picker.dart';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -10,6 +12,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController con = TextEditingController();
+  File? pickedimage;
 
   void login(TextEditingController controller) {
     if (controller.text.isEmpty) {
@@ -69,10 +72,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
           SizedBox(height: 30),
           InkWell(
             onTap: () {},
-            child: CircleAvatar(
-              radius: 70,
-              backgroundColor: Color(0xFFD9D9D9),
-              child: Image.asset('assets/images/photo-camera.png', height: 50, fit: BoxFit.cover),
+            child: GestureDetector(
+              onTap: (){
+                _openBottom(context);
+              },
+              child: pickedimage==null? CircleAvatar(
+
+                radius: 70,
+                backgroundColor: Color(0xFFD9D9D9),
+                child: Image.asset('assets/images/photo-camera.png', height: 50, fit: BoxFit.cover),
+              ) : CircleAvatar(
+                radius: 80,
+                backgroundImage: FileImage(pickedimage!),
+              ),
             ),
           ),
           SizedBox(height: 30),
@@ -100,5 +112,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
     );
+  }
+  _openBottom(BuildContext context){
+    return showModalBottomSheet(context: context, builder: (BuildContext context){
+      return Container(
+        height: 200,
+        width: 200,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+              IconButton(onPressed: (){
+                _pickImage(ImageSource.camera);
+              }, icon: Icon(Icons.camera_alt, size: 80,color: Colors.grey)),
+                IconButton(onPressed: (){
+                  _pickImage(ImageSource.gallery);
+                }, icon:Icon(Icons.photo,color: Colors.grey,size: 80)),
+              ],
+            )
+          ],
+        ),
+      );
+    });
+  }
+  _pickImage(ImageSource imagesource)async{
+    try{
+      final photo = await  ImagePicker().pickImage(source: imagesource);
+      if(photo == null)return;
+      final tempimage = File(photo.path);
+      setState(() {
+        pickedimage = tempimage;
+      });
+    }catch(ex){
+      return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(ex.toString()),backgroundColor: Colors.red,));
+    }
   }
 }
