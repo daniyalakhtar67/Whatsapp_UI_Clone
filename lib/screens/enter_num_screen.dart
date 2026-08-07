@@ -20,7 +20,18 @@ class _EnterNumScreenState extends State<EnterNumScreen> {
     "Dubai",
     "Saudia",
   ];
-  TextEditingController num = TextEditingController();
+  void login(String phonenumber){
+    if(phonenumber.isEmpty){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Center(child: Text('Enter your Number',style: TextStyle(
+        color: Colors.red,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      ),))));
+    }else{
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+    }
+  }
+  TextEditingController number = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +40,7 @@ class _EnterNumScreenState extends State<EnterNumScreen> {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         child: InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => OtpScreen()));
+          login(number.text);
           },
           child: Container(
             width: 40,
@@ -137,7 +148,7 @@ class _EnterNumScreenState extends State<EnterNumScreen> {
                   SizedBox(
                     width: 240,
                     child: TextFormField(
-                      controller: num,
+                      controller: number,
                       keyboardType: TextInputType.numberWithOptions(),
                       decoration: InputDecoration(
                         border: UnderlineInputBorder(
