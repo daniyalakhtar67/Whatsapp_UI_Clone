@@ -30,7 +30,23 @@ class Uihelper {
     return Text(
       text,
       style: GoogleFonts.roboto(fontSize: height, color: color ?? Color(0xFF5E5E5E), fontWeight: fontweight),
-
+    );
+  }
+  static CustomContainer(TextEditingController controller){
+    return Container(
+      height: 40,
+      width: 40,
+      decoration: BoxDecoration(
+        color: Colors.black12,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextFormField(
+        keyboardType: TextInputType.numberWithOptions(),
+        controller: controller,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+        ),
+      ),
     );
   }
 }

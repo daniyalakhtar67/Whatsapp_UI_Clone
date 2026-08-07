@@ -28,7 +28,7 @@ class _EnterNumScreenState extends State<EnterNumScreen> {
         fontWeight: FontWeight.bold,
       ),))));
     }else{
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen(phonenumber: phonenumber,)));
     }
   }
   TextEditingController number = TextEditingController();
