@@ -6,14 +6,14 @@ import 'package:image_picker/image_picker.dart';
 class CameraScreen extends StatefulWidget {
   const CameraScreen({super.key});
 
+
   @override
   State<CameraScreen> createState() => _CameraScreenState();
 }
 
 class _CameraScreenState extends State<CameraScreen> {
-  File? imagepicker; // ✅ class-level field
+  File? imagepicker;
 
-  // ✅ function ab class ke andar hai
   _pickImage(ImageSource imagesourse) async {
     try {
       final photo = await ImagePicker().pickImage(source: imagesourse);
@@ -28,6 +28,30 @@ class _CameraScreenState extends State<CameraScreen> {
       );
     }
   }
+  _openButton(BuildContext context){
+    return showModalBottomSheet(context: context, builder: (BuildContext context){
+      return Container(
+        height: 200,
+        width: 200,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(onPressed: (){
+                  _pickImage(ImageSource.camera);
+                }, icon: Icon(Icons.camera_alt)),
+                IconButton(onPressed: (){
+                  _pickImage(ImageSource.gallery);
+                }, icon: Icon(Icons.photo)),
+              ],
+            )
+          ],
+        ),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +65,12 @@ class _CameraScreenState extends State<CameraScreen> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    _pickImage(ImageSource.camera); // ✅ sahi function call
+                   _openButton(context);
                   },
                   child: CircleAvatar(
                     radius: 50,
                     backgroundImage: imagepicker != null
-                        ? FileImage(imagepicker!) as ImageProvider // ✅ picked image dikhao
+                        ? FileImage(imagepicker!) as ImageProvider
                         : NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGlJqTKVxuOxkKtEUSmydC2AntZwByplFHiH0-akZ2zg&s=10'),
                   ),
                 ),
