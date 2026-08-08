@@ -5,9 +5,54 @@ class ChatsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var arrContent=[
+      {
+        'image':"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ8dOFnXiyeT3SL4e2CrNvIUDxDu5rqEthaO2LXH-_Xg&s=10",
+        "name":"Daniyal",
+        "lastmsg":"Asalam-o-Alikum",
+        "time":"5:45 am",
+        "msg":"5",
+      },
+      {
+        'image':"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Z2eh-B1HpRGM1MM9zEcgWnjPPQFuH0FMJQkenCXN3g&s=10",
+        "name":"Ahmed",
+        "lastmsg":"Bhai Sun yr",
+        "time":"3:23 pm",
+        "msg":"2",
+      }
+    ];
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Chats'),
+      body: Column(
+        children: [
+          SizedBox(height: 10),
+          Expanded(
+            child: ListView.builder(itemBuilder: (context, index){
+            return ListTile(
+              leading: CircleAvatar(
+                radius: 30,
+                backgroundImage: NetworkImage(arrContent[index]['image'].toString()),
+              ),
+              title: Text(arrContent[index]['name'].toString(),style: TextStyle(fontSize: 14)),
+              subtitle: Text(arrContent[index]['lastmsg'].toString(), style: TextStyle(fontSize: 14,color: Color(0XFF889095))),
+              trailing: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(arrContent[index]['time'].toString(), style: TextStyle(fontSize: 12,color: Color(0xFF026500))),
+                  SizedBox(height: 4),
+                  CircleAvatar(
+                    radius: 6,
+                    backgroundColor: Color(0XFF036A01),
+                    child: Text(arrContent[index]['msg'].toString(),style: TextStyle(fontSize: 12,color: Colors.white),),
+                  )
+                ],
+              ),
+            );
+                    },
+                    itemCount: arrContent.length,
+                    ),
+          ),
+        ]
       ),
     );
   }
