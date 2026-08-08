@@ -19,7 +19,14 @@ class ChatsScreen extends StatelessWidget {
         "lastmsg":"Bhai Sun yr",
         "time":"3:23 pm",
         "msg":"2",
-      }
+      },
+      {
+        'image':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4mes9gW8qBGrug6s2BYubBcp51DH8mrZFlZ-84UMMxA&s=10',
+        'name':'tanveer',
+        'lastmsg':'ok, got it.',
+        'time':'7:21 am',
+        'msg':'1',
+      },
     ];
     return Scaffold(
       body: Column(
@@ -54,6 +61,11 @@ class ChatsScreen extends StatelessWidget {
           ),
         ]
       ),
+      floatingActionButton: CircleAvatar(
+        radius: 35,
+        backgroundColor: Color(0xFF008665),
+        child: Image.asset('assets/images/chats.png'),
+      )
     );
   }
 }
