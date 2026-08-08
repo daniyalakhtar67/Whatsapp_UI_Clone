@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'dart:io';
 
 import 'package:image_picker/image_picker.dart';
+import 'package:whatsapp_ui_clone/screens/home_screen.dart';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -20,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         SnackBar(content: Text('Enter your name')),
       );
     } else {
-      // yahan navigate ya save logic likho
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
     }
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui_clone/screens/home_screen.dart';
 import 'package:whatsapp_ui_clone/screens/splash_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF00A884)),
         useMaterial3: false, // Inbuild Flutter theme
       ),
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }
