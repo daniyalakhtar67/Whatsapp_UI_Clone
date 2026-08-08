@@ -1,4 +1,4 @@
-WhatsApp UI Clone
+# WhatsApp UI Clone
 
 A front-end clone of WhatsApp, built to practice recreating a real-world, widely-used app interface pixel by pixel. It walks through the same screens you'd hit on a fresh install — number verification, the welcome/consent screen, chats, and status — all styled to match WhatsApp's signature look.
 
