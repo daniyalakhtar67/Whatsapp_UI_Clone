@@ -25,10 +25,9 @@ git clone https://github.com/daniyalakhtar67/Whatsapp_UI_Clone.git
 cd Whatsapp_UI_Clone
 
 # Install dependencies
-# (fill in based on your stack, e.g. flutter pub get / npm install)
-
-# Run the app
-# (fill in run command)
+- (fill in based on your stack, e.g. flutter pub get / npm install)
+- Run the app
+- (fill in run command)
 Roadmap Ideas
 Functional chat screen with message bubbles
 Dark mode toggle
