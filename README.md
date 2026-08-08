@@ -44,3 +44,14 @@ Contributions, issues, and feature requests are welcome. Feel free to open an is
 
 License
 This project is open source and available for learning and personal use.
+
+# UI
+
+## Status
+<img width="720" height="1600" alt="WhatsApp Image 2026-08-08 at 7 21 24 PM (1)" src="https://github.com/user-attachments/assets/a99ef1cc-b89c-4c64-b9be-9e968cde1472" />
+
+## Welcome Screen
+<img width="720" height="1600" alt="WhatsApp Image 2026-08-08 at 7 21 24 PM" src="https://github.com/user-attachments/assets/b7365ef9-ff2f-4519-813b-66ef056d3bab" />
+
+## Chats
+<img width="720" height="1600" alt="WhatsApp Image 2026-08-08 at 7 21 25 PM" src="https://github.com/user-attachments/assets/4c76a03a-3e88-4aa8-af31-8194181d3968" />
